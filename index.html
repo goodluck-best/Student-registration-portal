@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Students Registration &amp; Admission Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Office of Admissions · Demo Portal</p>
+      <h1>Students Registration &amp; Admission Portal</h1>
+      <p class="sub">Register new students and review the admission register.</p>
+    </div>
+  </header>
+
+  <main class="wrap layout">
+    <section class="card" aria-labelledby="reg-h">
+      <h2 id="reg-h">Register a student</h2>
+      <form id="regForm" novalidate>
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="e.g. Chiamaka Okafor">
+          <span class="error" id="fullName-error"></span>
+        </div>
+        <div class="field">
+          <label for="matric">Matriculation number</label>
+          <input id="matric" name="matric" type="text" autocomplete="off" placeholder="e.g. 24/CSC/0101">
+          <span class="error" id="matric-error"></span>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+          <span class="error" id="email-error"></span>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="08012345678 or +2348012345678">
+          <span class="error" id="phone-error"></span>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="age">Age</label>
+            <input id="age" name="age" type="text" inputmode="numeric" placeholder="16–100">
+            <span class="error" id="age-error"></span>
+          </div>
+          <div class="field">
+            <label for="department">Department</label>
+            <select id="department" name="department">
+              <option value="">Select department…</option>
+              <option>Computer Science</option>
+              <option>Electrical Engineering</option>
+              <option>Mechanical Engineering</option>
+              <option>Medicine and Surgery</option>
+              <option>Law</option>
+              <option>Accounting</option>
+              <option>Economics</option>
+              <option>Mass Communication</option>
+              <option>Microbiology</option>
+              <option>Agricultural Science</option>
+            </select>
+            <span class="error" id="department-error"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters">
+          <span class="error" id="password-error"></span>
+        </div>
+        <button type="submit" class="btn primary">Register student</button>
+      </form>
+      <div id="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <aside class="side">
+      <div class="card count">
+        <span id="count" class="num">0</span>
+        <span class="lbl">Registered students</span>
+      </div>
+      <div class="card">
+        <h2>Demo records</h2>
+        <p class="hint">Load fictional sample students, or remove only those samples. Records you register yourself are never touched.</p>
+        <button type="button" id="loadDemo" class="btn secondary">Load demo records</button>
+        <button type="button" id="clearDemo" class="btn ghost">Clear demo records</button>
+      </div>
+    </aside>
+
+    <section class="card wide" aria-labelledby="reg-list-h">
+      <h2 id="reg-list-h">Admission register</h2>
+      <div id="emptyState" class="empty">
+        <p><strong>No students registered yet.</strong></p>
+        <p>Use the form to register a student, or load the demo records.</p>
+      </div>
+      <div class="table-wrap">
+        <table id="studentTable" hidden>
+          <thead>
+            <tr><th>#</th><th>Name</th><th>Matric no.</th><th>Email</th><th>Phone</th><th>Age</th><th>Department</th><th>Type</th></tr>
+          </thead>
+          <tbody id="studentBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">Demo only. Client-side validation is not production-grade admission security.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
